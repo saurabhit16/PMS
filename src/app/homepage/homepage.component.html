@@ -1,0 +1,18 @@
+<div style="text-align:center">
+
+  <h1>WELCOME TO PMS</h1>
+
+  <h3>LOGIN</h3>
+
+  <form [formGroup]="loginForm" (submit)="login()">
+
+    <input type="radio" formControlName="user" value="admin">Admin
+    <input type="radio" formControlName="user" value="student">Student<br>
+
+    <input type="text" formControlName="userId">UserID<br>
+    <input type="text" formControlName="password" >Password<br>
+
+    <input type="submit" value="Submit">
+    <!-- <button mat-Raised-button color="warn">Saurabh</button> -->
+  </form>
+</div>
