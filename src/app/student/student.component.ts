@@ -17,30 +17,39 @@ export class StudentComponent implements OnInit {
     private service: CommonService,
     private router: Router,
     private formbuilder: FormBuilder,
-    public pop:MatDialog) { }
+    public pop: MatDialog) { }
 
   registrationForm: FormGroup;
 
   ngOnInit() {
     this.registrationForm = this.formbuilder.group({
-      studentId: [''],
-      fullName: ['', Validators.required],
-      address: [''],
-      batch: ['', Validators.required],
-      course: ['', Validators.required],
-      sscMarks: ['', Validators.required],
-      slccMarks: ['', Validators.required],
-      graduationMarks: ['', Validators.required],
-      postGraduationMarks: ['', Validators.required],
+      studentId: ['12'],
+      fullName: ['2', Validators.required],
+      address: ['2'],
+      batch: ['2', Validators.required],
+      course: ['2', Validators.required],
+      sscMarks: ['2', Validators.required],
+      slccMarks: ['2', Validators.required],
+      graduationMarks: ['2', Validators.required],
+      postGraduationMarks: ['2', Validators.required],
     })
   }
   registerStudent() {
     console.log(this.registrationForm.value);
     if (this.registrationForm.valid) {
-       
-       //this.router.navigate(['student/profile']);
-       this.registrationForm.disabled;
-       this.pop.open(ConfirmartionPop);
+
+      this.router.navigate(['student/profile']);
+      // this.registrationForm.controls['fullName'].disable();    
+
+      console.log(Object.keys(this.registrationForm.controls));
+
+
+      Object.keys(this.registrationForm.controls)
+        .forEach((controlName) => {// controlName is array index value
+          this.registrationForm.controls[controlName].disable();
+        });
+
+      this.pop.open(ConfirmartionPop);
 
     }
   }
