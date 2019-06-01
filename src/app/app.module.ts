@@ -5,7 +5,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomepageComponent } from './homepage/homepage.component';
-import { AdminComponent } from './admin/admin.component';
+import { AdminComponent,AdminPopComponent, AdminDeletePopComponent} from './admin/admin.component';
 import { StudentComponent, ConfirmartionPop } from './student/student.component';
 import { NavComponent } from './student/nav/nav.component';
 import { ProfileComponent } from './student/profile/profile.component';
@@ -14,6 +14,9 @@ import { ProfileComponent } from './student/profile/profile.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule } from '@angular/material/dialog';
+import {MatTableModule} from '@angular/material/table';
+import {MatSortModule} from '@angular/material/sort';
+import { AdminnavComponent } from './admin/adminnav/adminnav.component';
 
 
 
@@ -25,16 +28,22 @@ import { MatDialogModule } from '@angular/material/dialog';
     StudentComponent,
     NavComponent,
     ProfileComponent,
-    ConfirmartionPop
+    ConfirmartionPop,
+    AdminnavComponent,
+    AdminPopComponent,
+    AdminDeletePopComponent
+    
   ],
-  entryComponents: [ConfirmartionPop],
+  entryComponents: [ConfirmartionPop,AdminPopComponent,AdminDeletePopComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
     MatButtonModule,
-    MatDialogModule
+    MatDialogModule,
+    MatTableModule,
+    MatSortModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,18 +1,31 @@
 <div style="text-align:center">
 
-  <h1>WELCOME TO PMS</h1>
+  <h1><span>Student Placement InfoSystem</span></h1>
 
   <h3>LOGIN</h3>
 
+
+
   <form [formGroup]="loginForm" (submit)="login()">
+    <table class="tablelogin">
+      <tr>
+        <td><input type="radio" formControlName="user" value="admin">Admin</td>
+        <td><input type="radio" formControlName="user" value="student">Student</td>
+      </tr>
 
-    <input type="radio" formControlName="user" value="admin">Admin
-    <input type="radio" formControlName="user" value="student">Student<br>
+      <tr>
+        <td>UserID </td>
+        <td><input type="text" formControlName="userId"></td>
+      </tr>
+      <tr>
+        <td>Password</td>
+        <td><input type="text" formControlName="password"></td>
+      </tr>
 
-    <input type="text" formControlName="userId">UserID<br>
-    <input type="text" formControlName="password" >Password<br>
-
-    <input type="submit" value="Submit">
-    <!-- <button mat-Raised-button color="warn">Saurabh</button> -->
+      <input type="submit" value="Submit">
+      <!-- <button mat-Raised-button color="warn">Saurabh</button> -->
+    </table>
   </form>
+
+
 </div>

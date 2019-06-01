@@ -39,8 +39,8 @@ export class StudentComponent implements OnInit {
     if (this.registrationForm.valid) {
 
       this.router.navigate(['student/profile']);
-      // this.registrationForm.controls['fullName'].disable();    
 
+      // this.registrationForm.controls['fullName'].disable();    
       console.log(Object.keys(this.registrationForm.controls));
 
 
