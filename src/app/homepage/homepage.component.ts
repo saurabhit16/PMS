@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CommonService } from '../common.service';
 import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import {MatButtonModule} from '@angular/material/button';
+import { MatButtonModule } from '@angular/material/button';
 
 @Component({
   selector: 'app-homepage',
@@ -34,15 +34,15 @@ export class HomepageComponent implements OnInit {
     console.log(this.loginForm.value);
 
     if (this.loginForm.value.user === 'admin') {
-      
+
       //login function for admin
 
       this.router.navigate(['admin']);
 
     }
 
-    if (this.loginForm.value.user === 'student'){
-      
+    if (this.loginForm.value.user === 'student') {
+
       //login function for student
 
       this.router.navigate(['student']);
@@ -50,4 +50,20 @@ export class HomepageComponent implements OnInit {
     }
   }
 
+  home() {
+    this.router.navigate(['homepage']);
+  }
+  aboutUs() {
+    this.router.navigate(['aboutus']);
+  }
+
+  contactUs() {
+    this.router.navigate(['contactus']);
+  }
+
+  feedBack(){
+    this.router.navigate(['feedback']);
+  }
 }
+
+

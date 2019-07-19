@@ -4,11 +4,15 @@ import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HomepageComponent } from './homepage/homepage.component';
+import { HomepageComponent} from './homepage/homepage.component';
 import { AdminComponent,AdminPopComponent, AdminDeletePopComponent} from './admin/admin.component';
 import { StudentComponent, ConfirmartionPop } from './student/student.component';
 import { NavComponent } from './student/nav/nav.component';
 import { ProfileComponent } from './student/profile/profile.component';
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
+import { AboutusComponent } from './aboutus/aboutus.component';
+import { ContactusComponent } from './contactus/contactus.component';
 
 // Material imports
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -17,6 +21,11 @@ import { MatDialogModule } from '@angular/material/dialog';
 import {MatTableModule} from '@angular/material/table';
 import {MatSortModule} from '@angular/material/sort';
 import { AdminnavComponent } from './admin/adminnav/adminnav.component';
+import {MatMenuModule} from '@angular/material/menu';
+import {MatListModule,MatDividerModule, MatGridListModule} from '@angular/material';
+import { FeedbackComponent } from './feedback/feedback.component';
+import { HomemenuComponent } from './homemenu/homemenu.component';
+
 
 
 
@@ -31,7 +40,13 @@ import { AdminnavComponent } from './admin/adminnav/adminnav.component';
     ConfirmartionPop,
     AdminnavComponent,
     AdminPopComponent,
-    AdminDeletePopComponent
+    AdminDeletePopComponent,
+    HeaderComponent,
+    FooterComponent,
+    AboutusComponent,
+    ContactusComponent,
+    FeedbackComponent,
+    HomemenuComponent
     
   ],
   entryComponents: [ConfirmartionPop,AdminPopComponent,AdminDeletePopComponent],
@@ -43,8 +58,13 @@ import { AdminnavComponent } from './admin/adminnav/adminnav.component';
     MatButtonModule,
     MatDialogModule,
     MatTableModule,
-    MatSortModule
-  ],
+    MatSortModule,
+    MatMenuModule,
+    MatListModule,
+    MatDividerModule,
+    MatGridListModule
+    
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })
