@@ -1,8 +1,77 @@
 <app-nav></app-nav>
 <div class="container">
 
+
+
   <form [formGroup]="registrationForm" (submit)="registerStudent()">
-    <table>
+    <div class="form-group row">
+      <label for="studentId" class="col-sm-2 col-form-label">Student Id</label>
+      <div class="col-sm-10">
+        <input type="number" class="form-control" formControlName="studentId">
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label for="fullName" class="col-sm-2 col-form-label">Full Name</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" formControlName="fullName">
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label for="address" class="col-sm-2 col-form-label">Address</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" formControlName="address">
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label for="batch" class="col-sm-2 col-form-label">Batch</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" formControlName="batch">
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label for="course" class="col-sm-2 col-form-label">Course</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" formControlName="course">
+      </div>
+    </div>
+    <br>
+    <div class="form-group row col-sm-2 col-form-label"><b>Qualifications</b></div>
+    <div class="form-group row">
+      <label for="sscMarks" class="col-sm-2 col-form-label">X/SSC Marks</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" formControlName="sscMarks">
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label for="slccMarks" class="col-sm-2 col-form-label">Diploma Marks/SLC</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" formControlName="slccMarks">
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label for="graduationMarks" class="col-sm-2 col-form-label">Gradution Marks</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" formControlName="graduationMarks">
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label for="postGraduationMarks" class="col-sm-2 col-form-label">Post Graduation Marks</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" formControlName="postGraduationMarks">
+      </div>
+    </div>
+    <br>
+
+    <button type="submit" class="btn btn-primary btn-lg btn-block">Submit</button>
+
+    <!-- <table>
 
       <tr>
         <td>Student Id</td>
@@ -24,6 +93,7 @@
         <td>Course</td>
         <td><input type="text" formControlName="course"><br></td>
       </tr>
+      <br>
 
 
       <tr>
@@ -45,8 +115,9 @@
         <td>Post Graduation Marks</td>
         <td><input type="number" formControlName="postGraduationMarks"><br></td>
       </tr>
-    </table>
-    <input type="submit" value="Submit">
+      <input type="submit" value="Submit">
+    </table> -->
+    
 
   </form>
 </div>
