@@ -13,6 +13,9 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { AboutusComponent } from './aboutus/aboutus.component';
 import { ContactusComponent } from './contactus/contactus.component';
+import { FeedbackComponent } from './feedback/feedback.component';
+import { HomemenuComponent } from './homemenu/homemenu.component';
+
 
 // Material imports
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -22,9 +25,8 @@ import {MatTableModule} from '@angular/material/table';
 import {MatSortModule} from '@angular/material/sort';
 import { AdminnavComponent } from './admin/adminnav/adminnav.component';
 import {MatMenuModule} from '@angular/material/menu';
-import {MatListModule,MatDividerModule, MatGridListModule} from '@angular/material';
-import { FeedbackComponent } from './feedback/feedback.component';
-import { HomemenuComponent } from './homemenu/homemenu.component';
+import {MatListModule,MatDividerModule, MatGridListModule, MatIconModule} from '@angular/material';
+import { AngularFontAwesomeModule } from 'angular-font-awesome';
 
 
 
@@ -62,8 +64,9 @@ import { HomemenuComponent } from './homemenu/homemenu.component';
     MatMenuModule,
     MatListModule,
     MatDividerModule,
-    MatGridListModule
-    
+    MatGridListModule,
+    MatIconModule,
+    AngularFontAwesomeModule
     ],
   providers: [],
   bootstrap: [AppComponent]
