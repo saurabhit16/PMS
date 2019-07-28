@@ -1,0 +1,32 @@
+<h1 mat-dialog-title>Data Submitted Successfully from admin!</h1>
+
+<div style="padding: 10pt">
+
+    <form [formGroup]="editForm">
+        <table>
+
+            <tr>
+                <td>Student Id</td>
+                <td><input type="number" formControlName="studentId"><br></td>
+            </tr>
+
+            <tr>
+                <td>Full Name</td>
+                <td><input type="text" formControlName="fullName"><br></td>
+            </tr>
+
+            <tr>
+                <td>Course</td>
+                <td><input type="text" formControlName="course"><br></td>
+            </tr>
+
+            <tr>
+                <td>Status</td>
+                <td><input type="text" formControlName="status"><br></td>
+            </tr>
+
+        </table>
+        <input type="button" (click)="updateStudent()" value="Submit">
+
+    </form>
+</div>
