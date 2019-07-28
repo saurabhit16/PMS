@@ -1,5 +1,12 @@
 <app-adminnav></app-adminnav>
 
+<h5>Hi {{currentUser.userId}}!</h5>
+<ul>
+    <li *ngFor="let user of users">
+        {{user.username}} ({{user.userId}} 
+        - <a (click)="deleteUser(user.id)" class="text-danger">Delete</a>
+    </li>
+</ul>
 
 
 <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">

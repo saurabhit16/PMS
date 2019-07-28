@@ -1,7 +1,10 @@
 
 import { Component, Inject, OnInit } from '@angular/core';
+import { first } from 'rxjs/operators';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms'
+import { AuthenticationService, StudentService } from '../_services';
+import { user } from '../_helpers/user';
 
 
 
@@ -29,10 +32,35 @@ const ELEMENT_DATA: PeriodicElement[] = [
   styleUrls: ['./admin.component.scss']
 })
 
-export class AdminComponent {
+export class AdminComponent implements OnInit {
 
+  currentUser: any;
+    users = user;
   constructor(
-    public pop: MatDialog) { }
+    private authenticationService: AuthenticationService,
+    private studentService: StudentService,
+    public pop: MatDialog) { 
+
+      this.currentUser = this.authenticationService.currentUserValue;
+    
+    }
+
+    ngOnInit() {
+      this.loadAllUsers();
+  }
+
+  deleteUser(id: number) {
+    this.studentService.deleteStudent(id)
+        .pipe(first())
+        .subscribe(() => this.loadAllUsers());
+}
+
+private loadAllUsers() {
+    this.studentService.getAllStudents()
+        .pipe(first())
+        .subscribe(users => this.users = user);
+}
+
 
 
   displayedColumns: string[] = ['studentId', 'fullName', 'course', 'email', 'mobile', 'status', 'edit'];
@@ -72,6 +100,7 @@ export class AdminPopComponent implements OnInit {
 
   
   constructor(
+    
     public popupreference: MatDialogRef<AdminPopComponent>,
     @Inject(MAT_DIALOG_DATA) public data: PeriodicElement,
     private formbuilder: FormBuilder) { }

@@ -1,8 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
+import { JwtInterceptor, ErrorInterceptor } from './_helpers';
 import { AppComponent } from './app.component';
 import { HomepageComponent} from './homepage/homepage.component';
 import { AdminComponent,AdminPopComponent, AdminDeletePopComponent} from './admin/admin.component';
@@ -15,6 +17,7 @@ import { AboutusComponent } from './aboutus/aboutus.component';
 import { ContactusComponent } from './contactus/contactus.component';
 import { FeedbackComponent } from './feedback/feedback.component';
 import { HomemenuComponent } from './homemenu/homemenu.component';
+import { RegisterComponent } from './register';
 
 
 // Material imports
@@ -28,7 +31,8 @@ import {MatMenuModule} from '@angular/material/menu';
 import {MatListModule,MatDividerModule, MatGridListModule, MatIconModule} from '@angular/material';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 
-
+// used to create alert message
+import { AlertComponent } from './_components';
 
 
 @NgModule({
@@ -48,7 +52,9 @@ import { AngularFontAwesomeModule } from 'angular-font-awesome';
     AboutusComponent,
     ContactusComponent,
     FeedbackComponent,
-    HomemenuComponent
+    HomemenuComponent,
+    RegisterComponent,
+    AlertComponent
     
   ],
   entryComponents: [ConfirmartionPop,AdminPopComponent,AdminDeletePopComponent],
@@ -56,6 +62,7 @@ import { AngularFontAwesomeModule } from 'angular-font-awesome';
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
+    HttpClientModule,
     BrowserAnimationsModule,
     MatButtonModule,
     MatDialogModule,
@@ -68,7 +75,12 @@ import { AngularFontAwesomeModule } from 'angular-font-awesome';
     MatIconModule,
     AngularFontAwesomeModule
     ],
-  providers: [],
+    providers: [
+
+      { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
+      { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
+
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

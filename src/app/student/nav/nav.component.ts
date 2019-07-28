@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthenticationService } from 'src/app/_services';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-nav',
@@ -7,9 +9,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavComponent implements OnInit {
 
-  constructor() { }
+  returnUrl: string;
+  
+  constructor(
+    private authenticationService: AuthenticationService,
+    private route: ActivatedRoute,
+    private router: Router
+  ) {
+    this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
+   }
 
   ngOnInit() {
   }
 
+  logout(){
+
+    this.authenticationService.logout();
+    this.router.navigate([this.returnUrl]);
+  }
+  
 }
